@@ -16,6 +16,7 @@ module.exports = withStoreConfig({
       "medusa-public-images.s3.eu-west-1.amazonaws.com",
       "localhost",
       "medusa-server-testing.s3.amazonaws.com",
+      "https://surazul-files.admin.surazulbordados.com/"
     ],
   },
 })

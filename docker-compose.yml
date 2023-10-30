@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  storefront:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: storefront:medusa
+    container_name: medusa-storefront
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
+      NODE_ENV: production
+      POSTGRES_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://localhost:9000
+      NEXT_PUBLIC_BASE_URL: http://localhost:8000
+      REDIS_URL: redis://cache
+      REVALIDATE_SECRET: supersecret
+    ports:
+      - "8000:8000"
