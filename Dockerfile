@@ -1,10 +1,7 @@
 # Install dependencies only when needed
 FROM node:alpine AS deps
 
-ARG PORT
 ARG NEXT_PUBLIC_MEDUSA_BACKEND_URL
-
-ENV PORT=$PORT
 ENV NEXT_PUBLIC_MEDUSA_BACKEND_URL=$NEXT_PUBLIC_MEDUSA_BACKEND_URL
 ENV NODE_ENV production
 
@@ -38,6 +35,7 @@ COPY --from=builder /app/tailwind.config.js ./tailwind.config.js
 COPY --from=builder /app/store-config.js ./store-config.js
 COPY --from=builder /app/store.config.json ./store.config.json
 
+ARG PORT
 EXPOSE $PORT
 
 # Next.js collects completely anonymous telemetry data about general usage.

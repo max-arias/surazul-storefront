@@ -34,6 +34,7 @@ jobs:
           push: true
           tags: ${{ env.IMAGE_URL }}
           NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_MEDUSA_BACKEND_URL }}
+          PORT: 8000
 
       - name: Deploy Image to CapRrover
         uses: caprover/deploy-from-github@v1.1.2
