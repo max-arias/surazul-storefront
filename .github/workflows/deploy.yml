@@ -33,15 +33,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.IMAGE_URL }}
-          NEXT_PUBLIC_MEDUSA_BACKEND_URL: "${{ secrets.NEXT_PUBLIC_MEDUSA_BACKEND_URL }}"
-          NEXT_PUBLIC_BASE_URL: "${{ secrets.NEXT_PUBLIC_BASE_URL }}"
-          POSTGRES_URL: "${{ secrets.POSTGRES_URL }}"
-          REDIS_URL: "${{ secrets.REDIS_URL }}"
-          NEXT_PUBLIC_SEARCH_APP_ID: "${{ secrets.NEXT_PUBLIC_SEARCH_APP_ID }}"
-          NEXT_PUBLIC_SEARCH_ENDPOINT: "${{ secrets.NEXT_PUBLIC_SEARCH_ENDPOINT }}"
-          NEXT_PUBLIC_SEARCH_API_KEY: "${{ secrets.NEXT_PUBLIC_SEARCH_API_KEY }}"
-          NEXT_PUBLIC_SEARCH_INDEX_NAME: "${{ secrets.NEXT_PUBLIC_SEARCH_INDEX_NAME }}"
-          REVALIDATE_SECRET: "${{ secrets.REVALIDATE_SECRET }}"
 
       - name: Deploy Image to CapRrover
         uses: caprover/deploy-from-github@v1.1.2
