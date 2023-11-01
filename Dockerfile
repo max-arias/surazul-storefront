@@ -35,8 +35,13 @@ COPY --from=builder /app/store.config.json ./store.config.json
 
 # USER nextjs
 
-ENV PORT=80
-EXPOSE 80
+ARG PORT
+ARG NEXT_PUBLIC_MEDUSA_BACKEND_URL
+
+ENV PORT=$PORT
+ENV NEXT_PUBLIC_MEDUSA_BACKEND_URL=$NEXT_PUBLIC_MEDUSA_BACKEND_URL
+
+EXPOSE $PORT
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
