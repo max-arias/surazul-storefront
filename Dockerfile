@@ -1,6 +1,13 @@
 # Install dependencies only when needed
 FROM node:alpine AS deps
 
+ARG PORT
+ARG NEXT_PUBLIC_MEDUSA_BACKEND_URL
+
+ENV PORT=$PORT
+ENV NEXT_PUBLIC_MEDUSA_BACKEND_URL=$NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ENV NODE_ENV production
+
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json yarn.lock ./
@@ -18,8 +25,6 @@ RUN export NODE_OPTIONS=--openssl-legacy-provider && yarn build && yarn install 
 FROM node:alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
@@ -32,14 +37,6 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/tailwind.config.js ./tailwind.config.js
 COPY --from=builder /app/store-config.js ./store-config.js
 COPY --from=builder /app/store.config.json ./store.config.json
-
-# USER nextjs
-
-ARG PORT
-ARG NEXT_PUBLIC_MEDUSA_BACKEND_URL
-
-ENV PORT=$PORT
-ENV NEXT_PUBLIC_MEDUSA_BACKEND_URL=$NEXT_PUBLIC_MEDUSA_BACKEND_URL
 
 EXPOSE $PORT
 
