@@ -49,15 +49,14 @@ RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 
-COPY --from=builder --chown=nextjs:nodejs/app/next.config.js ./
-COPY --from=builder --chown=nextjs:nodejs/app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/next.config.js ./
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs/app/node_modules ./node_modules
-COPY --from=builder --chown=nextjs:nodejs/app/package.json ./package.json
-COPY --from=builder --chown=nextjs:nodejs/app/tailwind.config.js ./tailwind.config.js
-COPY --from=builder --chown=nextjs:nodejs/app/store-config.js ./store-config.js
-COPY --from=builder --chown=nextjs:nodejs/app/store.config.json ./store.config.json
-
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/tailwind.config.js ./tailwind.config.js
+COPY --from=builder --chown=nextjs:nodejs /app/store-config.js ./store-config.js
+COPY --from=builder --chown=nextjs:nodejs /app/store.config.json ./store.config.json
 
 USER nextjs
 
