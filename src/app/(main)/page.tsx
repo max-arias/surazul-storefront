@@ -6,9 +6,9 @@ import { Metadata } from "next"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "SurAzul bordados",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "SurAzul bordados - TODO",
 }
 
 export default async function Home() {
