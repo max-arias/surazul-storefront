@@ -1,9 +1,13 @@
 SurAzul bordados Storefront
 
-### Make sure to exclude the `src/app/api` folder since we're not using serverless
+# Local Dev
 
----
+> Make sure to run the `surazul-bordados-admin` with docker-compose first. See that repo for more info.
 
-Make sure to run the `surazul-bordados-admin` with docker-compose first
+- Run `yarn dev`
 
-Then install deps and run yarn dev
+# Updates
+
+Copy over the (Next Medusa JS starter)[https://github.com/medusajs/nextjs-starter-medusa]
+
+### ⚠️ Make sure to exclude the `src/app/api` folder since we're not using serverless ⚠️
