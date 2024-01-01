@@ -38,10 +38,11 @@ const Hero = () => {
       (slider) => {
         let mouseOver = false
         function clearNextTimeout() {
-          clearTimeout(timeout)
+          timeout && clearTimeout(timeout)
         }
         function nextTimeout() {
-          clearTimeout(timeout)
+          clearNextTimeout()
+
           if (mouseOver) return
 
           const tm = setTimeout(() => {
@@ -74,7 +75,7 @@ const Hero = () => {
         {images.map((src, idx) => (
           <div
             key={idx}
-            className="fader__slide w-full h-full absolute top-0 transition-opacity duration-500"
+            className="fader__slide w-full h-full absolute top-0 transition-opacity duration-500 ease-in"
             style={{ opacity: opacities[idx] }}
           >
             {/* TODO: next/image */}
@@ -92,13 +93,17 @@ const Hero = () => {
           <h3 className="text-white mb-1 drop-shadow">Lorem ipsum</h3>
 
           <div className="dots flex pt-3 justify-start gap-2 left-0">
-            {[
-              ...Array(instanceRef.current.track.details.slides.length).keys(),
-            ].map((idx) => {
+            {Array.from(
+              {
+                length: instanceRef.current?.track?.details?.slides.length || 0,
+              },
+              (_, i) => i
+            ).map((idx) => {
               return (
                 <button
                   key={idx}
                   onClick={() => {
+                    timeout && clearTimeout(timeout)
                     instanceRef.current?.moveToIdx(idx)
                   }}
                   className={
