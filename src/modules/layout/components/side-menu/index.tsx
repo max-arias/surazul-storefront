@@ -82,7 +82,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                               className="text-3xl leading-10 hover:text-ui-fg-disabled"
                               onClick={close}
                             >
-                              {translations[name]}
+                              {translations[name as keyof typeof translations]}
                             </Link>
                           </li>
                         )
