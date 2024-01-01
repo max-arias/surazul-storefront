@@ -6,9 +6,8 @@ import { Metadata } from "next"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "SurAzul bordados",
-  description:
-    "SurAzul bordados - TODO",
+  title: "SurAzul Bordados",
+  description: "SurAzul Bordados - TODO",
 }
 
 export default async function Home() {

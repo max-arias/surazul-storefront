@@ -13,6 +13,14 @@ const SideMenuItems = {
   Cart: "/cart",
 }
 
+const translations = {
+  Home: "Inicio",
+  Store: "Tienda",
+  Search: "Buscar",
+  Account: "Cuenta",
+  Cart: "Carrito",
+}
+
 const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
   const handleSearchClick = (close: () => void) => {
     searchModalOpen()
@@ -62,7 +70,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                                 className="text-3xl leading-10 hover:text-ui-fg-disabled"
                                 onClick={() => handleSearchClick(close)}
                               >
-                                {name}
+                                {translations[name]}
                               </button>
                             </li>
                           )
@@ -74,7 +82,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                               className="text-3xl leading-10 hover:text-ui-fg-disabled"
                               onClick={close}
                             >
-                              {name}
+                              {translations[name]}
                             </Link>
                           </li>
                         )
@@ -95,8 +103,8 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} SurAzul Bordados. All rights
-                        reserved.
+                        © {new Date().getFullYear()} SurAzul Bordados. All
+                        rights reserved.
                       </Text>
                     </div>
                   </div>

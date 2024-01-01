@@ -3,8 +3,8 @@ import { search } from "../actions"
 import SearchResultsTemplate from "@modules/search/templates/search-results-template"
 
 export const metadata: Metadata = {
-  title: "Search",
-  description: "Explore all of our products.",
+  title: "Búsqueda",
+  description: "Explora todos nuestros productos.",
 }
 
 export default async function StorePage({

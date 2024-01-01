@@ -27,7 +27,7 @@ const SearchResultsTemplate = ({ query, hits }: SearchResultsTemplateProps) => {
     <div>
       <div className="flex justify-between border-b w-full py-6 px-8 small:px-14 items-center">
         <div className="flex flex-col items-start">
-          <Text className="text-ui-fg-muted">Search Results for:</Text>
+          <Text className="text-ui-fg-muted">Resultados de Búsqueda para:</Text>
           <Heading>
             {query} ({hits.length})
           </Heading>

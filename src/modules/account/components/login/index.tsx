@@ -45,19 +45,23 @@ const Login = () => {
           <Spinner />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
+      <h1 className="text-large-semi uppercase mb-6">Bienvenido de nuevo</h1>
       <p className="text-center text-base-regular text-gray-700 mb-8">
-        Sign in to access an enhanced shopping experience.
+        Inicia sesión para acceder a una experiencia de compra mejorada.
       </p>
       <form className="w-full" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
+            className="input input-bordered w-full"
             label="Email"
-            {...register("email", { required: "Email is required" })}
+            {...register("email", {
+              required: "Se requiere correo electrónico.",
+            })}
             autoComplete="email"
             errors={errors}
           />
           <Input
+            className="input input-bordered w-full"
             label="Password"
             {...register("password", { required: "Password is required" })}
             type="password"
@@ -72,9 +76,9 @@ const Login = () => {
             </span>
           </div>
         )}
-        <Button className="mt-6 w-full" size="large">
+        <button type="submit" className="mt-6 w-full btn btn-primary">
           Enter
-        </Button>
+        </button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Not a member?{" "}

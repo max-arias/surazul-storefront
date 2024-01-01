@@ -1,5 +1,6 @@
 import Providers from "@modules/providers"
 import "styles/globals.css"
+import "keen-slider/keen-slider.min.css"
 
 export default function RootLayout({
   children,

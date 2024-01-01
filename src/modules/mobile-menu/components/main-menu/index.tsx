@@ -54,8 +54,8 @@ const MainMenu = () => {
             onClick={setScreenSearch}
           >
             <MagnifyingGlassMini />
-            <span placeholder="Search products" className="text-base-regular">
-              Search products
+            <span placeholder="Buscar productos" className="text-base-regular">
+              Buscar productos
             </span>
           </button>
         )}

@@ -127,12 +127,20 @@ const CartDropdown = () => {
                   <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span>Tu bolsa de compras está vacía.</span>
                   <div>
                     <Link href="/store">
                       <>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <span className="sr-only">
+                          Ir a la página de todos los productos
+                        </span>
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={close}
+                        >
+                          Explorar productos
+                        </button>
                       </>
                     </Link>
                   </div>

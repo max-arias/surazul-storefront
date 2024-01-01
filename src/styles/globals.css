@@ -47,6 +47,11 @@
   input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
   }
+
+  :root,
+  [data-theme] {
+    background-color: white;
+  }
 }
 
 @layer components {

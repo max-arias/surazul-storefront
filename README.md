@@ -1,4 +1,4 @@
-SurAzul bordados Storefront
+SurAzul Bordados Storefront
 
 # Local Dev
 

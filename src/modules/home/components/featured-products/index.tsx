@@ -8,15 +8,13 @@ const FeaturedProducts = ({
 }) => {
   return (
     <div className="py-12">
-      <div className="py-12">
-        <ul className="flex flex-col gap-x-6 gap-y-8">
-          {collections.map((collection) => (
-            <li key={collection.id}>
-              <ProductRail collection={collection} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="flex flex-col gap-x-6 gap-y-8">
+        {collections.map((collection) => (
+          <li key={collection.id}>
+            <ProductRail collection={collection} />
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
